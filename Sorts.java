@@ -105,13 +105,12 @@ public class Sorts {
         }
     }
 
-    //只对前size个元素进行堆化
-    public void heapSort(int size,int[] nums){
-        for(int i=(size-1)/2;i>=0;i--){
-            heapify(i,size,nums);
-        }
-
-    }
+//    //只对前size个元素进行堆化
+//    public void heapSort(int size,int[] nums){
+//        for(int i=(size-1)/2;i>=0;i--){
+//            heapify(i,size,nums);
+//        }
+//    }
 
     public void maxheap(int[] arr){
         //构建初始大顶堆
