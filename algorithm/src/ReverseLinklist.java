@@ -1,5 +1,3 @@
-package prac_algorithm;
-
 //翻转单链表
 
 public class ReverseLinklist {

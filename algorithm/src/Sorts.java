@@ -1,7 +1,7 @@
-package prac_algorithm;
+
 
 /*
-* explain:This class is realize some classic sort algorithms.
+* 各种排序算法
 * date:2019-07-18
 * author:wangjue
 * */
