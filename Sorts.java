@@ -84,6 +84,42 @@ public class Sorts {
         quickSort(mid+1,r,arr);
     }
 
+    //归并排序，先分，再合
+    public void sort(int[] arr) {
+        int[] temp = new int[arr.length];
+        sort(arr,0,arr.length-1,temp);
+    }
+
+    public void sort(int[] arr, int left, int right, int[] temp) {
+        if(right<=left){ return;}
+        int mid = left+(right-left)/2;
+        sort(arr,left,mid,temp);
+        sort(arr,mid+1,right,temp);
+        merge(arr,left,mid,right,temp);
+    }
+
+    public void merge(int[] arr, int left, int mid, int right, int[] temp) {
+        int l = left;
+        int r = mid+1;
+        int t = 0;
+        while(l<=mid && r<=right) {
+            if(arr[l]<arr[r]) {
+                temp[t++] = arr[l++];
+            } else {
+                temp[t++] = arr[r++];
+            }
+        }
+        while(l<=mid) {
+            temp[t++] = arr[l++];
+        }
+        while(r<=right) {
+            temp[t++] = arr[r++];
+        }
+        t = 0;
+        while(left<=right){
+            arr[left++] = temp[t++];
+        }
+    }
 
     //堆排序,思路:一棵完全二叉树,父节点始终大于左右节点
     //将以第i个元素为顶点的子树堆化
